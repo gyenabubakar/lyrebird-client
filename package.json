@@ -1,7 +1,7 @@
 {
-  "name": "turborepo-basic",
+  "name": "lyrebird",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "workspaces": [
     "app",
     "packages/*"
@@ -10,13 +10,14 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write '**/*.{ts,tsx,.md}'"
+    "prettier": "prettier --write '**/*.{ts,tsx,md,json,vue}'"
   },
   "devDependencies": {
-    "prettier": "^2.5.1",
+    "prettier": "2.8.0",
     "turbo": "*"
   },
   "engines": {
-    "node": ">=14.0.0"
-  }
+    "node": ">=16.x"
+  },
+  "packageManager": "npm@8.15.0"
 }

@@ -1,5 +1,5 @@
-const { postcss } = require("@tasksheet/configs");
+const { postcss } = require('@lyrebird/configs');
 
 module.exports = {
-  ...postcss
+  ...postcss,
 };
