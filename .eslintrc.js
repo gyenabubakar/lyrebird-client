@@ -1,15 +1,25 @@
 module.exports = {
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
   env: {
     browser: true,
     es2021: true,
+    node: true,
   },
-  extends: ['plugin:vue/vue3-essential', 'standard-with-typescript', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:vue/vue3-essential',
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
+  ],
   overrides: [],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./packages/ui/tsconfig.json'],
+  plugins: ['vue', '@typescript-eslint', 'prettier'],
+  rules: {
+    'vue/multi-word-component-names': 'off',
+    '@typescript-eslint/no-var-requires': 'off',
   },
-  plugins: ['vue'],
-  rules: {},
 };

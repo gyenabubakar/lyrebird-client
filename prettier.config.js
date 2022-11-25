@@ -3,6 +3,9 @@ module.exports = {
   semi: true,
   singleQuote: true,
   trailingComma: 'es5',
-  printWidth: 90,
+  printWidth: 80,
   useTabs: false,
+  tailwindConfig: './packages/configs/tailwind.config.js',
+  plugins: [require('prettier-plugin-tailwindcss')],
+  vueIndentScriptAndStyle: true,
 };

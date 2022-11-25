@@ -7,22 +7,23 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
     "dev": "turbo run dev --parallel",
+    "dev:ui": "turbo run dev --filter=@lyrebird/ui",
+    "build": "turbo run build",
+    "build:ui": "turbo run build --filter=@lyrebird/ui",
     "prettier": "prettier --write '**/*.{ts,tsx,md,json,vue}'",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue .",
     "codestyle": "npm run prettier --loglevel silent && npm run lint"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "@typescript-eslint/parser": "^5.44.0",
     "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-config-standard-with-typescript": "^23.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.5.1",
-    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.8.0",
     "prettier": "2.8.0",
+    "prettier-plugin-tailwindcss": "^0.1.13",
     "turbo": "*",
     "typescript": "^4.9.3"
   },

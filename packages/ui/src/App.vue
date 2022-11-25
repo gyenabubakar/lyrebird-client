@@ -7,11 +7,11 @@
 </template>
 
 <style lang="postcss" scoped>
-h1 {
-  @apply text-3xl font-bold text-red-500;
+  h1 {
+    @apply text-3xl font-bold text-red-500;
 
-  span {
-    @apply text-blue-500;
+    span {
+      @apply text-blue-500;
+    }
   }
-}
 </style>
