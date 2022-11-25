@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<style scoped lang="postcss">
+<style lang="postcss" scoped>
 h1 {
   @apply text-3xl font-bold text-red-500;
 
