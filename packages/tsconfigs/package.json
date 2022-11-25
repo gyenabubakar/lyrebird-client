@@ -1,0 +1,9 @@
+{
+  "name": "@tasksheet/tsconfigs",
+  "version": "0.0.0",
+  "private": false,
+  "files": [
+    "tsconfig.base.json",
+    "tsconfig.node.json"
+  ]
+}

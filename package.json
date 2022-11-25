@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "apps/*",
+    "app",
     "packages/*"
   ],
   "scripts": {
@@ -15,5 +15,8 @@
   "devDependencies": {
     "prettier": "^2.5.1",
     "turbo": "*"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

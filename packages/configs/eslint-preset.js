@@ -3,11 +3,11 @@ module.exports = {
   settings: {
     next: {
       rootDir: [
-        "apps/docs/",
-        "apps/web/",
+        "app/docs/",
+        "app/web/",
         "packages/ui/",
-        "packages/config/",
-        "packages/tsconfig/",
+        "packages/configs/",
+        "packages/tsconfigs/",
       ],
     },
   },
