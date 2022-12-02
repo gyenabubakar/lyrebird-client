@@ -3,14 +3,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@lyrebird/ui/": ["src/*"]
+      "@lyrebird/ui/*": ["src/*"]
     }
   },
-  "include": [
-    "./src/**/*.ts",
-    "./src/**/*.d.ts",
-    "./src/**/*.tsx",
-    "./src/**/*.vue"
-  ],
   "exclude": ["node_modules"]
 }

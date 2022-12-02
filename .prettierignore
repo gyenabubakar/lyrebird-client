@@ -1,5 +1,4 @@
-.next
-next-env.d.ts
+.nuxt
 node_modules
 package-lock.json
 .idea

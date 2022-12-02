@@ -1,0 +1,24 @@
+{
+  "name": "@lyrebird/app",
+  "version": "0.0.0",
+  "private": false,
+  "scripts": {
+    "dev": "nuxt dev -p 7000",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "^3.0.0"
+  },
+  "devDependencies": {
+    "@lyrebird/configs": "*",
+    "@lyrebird/tsconfigs": "*",
+    "@lyrebird/ui": "*",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.19",
+    "postcss-import": "^15.0.0",
+    "tailwindcss": "^3.2.4"
+  }
+}

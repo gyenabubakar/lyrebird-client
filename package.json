@@ -9,8 +9,10 @@
   "scripts": {
     "dev": "turbo run dev --parallel",
     "dev:ui": "turbo run dev --filter=@lyrebird/ui",
+    "dev:app": "turbo run dev --filter=@lyrebird/app",
     "build": "turbo run build",
     "build:ui": "turbo run build --filter=@lyrebird/ui",
+    "build:app": "turbo run build --filter=@lyrebird/app",
     "prettier": "prettier --write '**/*.{ts,tsx,md,json,vue}'",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue .",
     "codestyle": "npm run prettier --loglevel silent && npm run lint"
