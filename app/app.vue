@@ -1,6 +1,5 @@
 <script lang="ts" setup>
-  import { onMounted, useHead } from '#imports';
-  import { helloAssets } from '@lyrebird/app/assets/main';
+  import { useHead } from '#imports';
 
   useHead({
     title: 'Lyrebird',
@@ -11,10 +10,6 @@
         type: 'image/svg+xml',
       },
     ],
-  });
-
-  onMounted(() => {
-    helloAssets();
   });
 </script>
 
