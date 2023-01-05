@@ -13,7 +13,7 @@ this: [Lyrebird Notion Document](https://www.notion.so/gyen/Lyrebird-A-Twitter-C
 
 ## Setup
 
-To set up the project, you need to have [Node.js](https://nodejs.org/en/) (**at least v16.x**) installed on your
+To set up the project, you need to have [Node.js](https://nodejs.org/en/) (**at least v18.x**) installed on your
 machine,
 and it's recommended to use NPM (**at least v8.x**) as your package manager; this is to ensure consistency across the
 project
