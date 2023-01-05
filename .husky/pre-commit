@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+
+# if the current branch is main or staging, stop the commit
+if [ "$BRANCH" = "main" ] || [ "$BRANCH" = "staging" ]; then
+  echo "❌ You can't commit directly to \"$BRANCH\". Create a feature branch and open a pull request."
+  exit 1
+fi
+
+# run code quality checks
+npm run code-quality:all && git add .

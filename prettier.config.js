@@ -3,7 +3,7 @@ module.exports = {
   semi: true,
   singleQuote: true,
   trailingComma: 'all',
-  printWidth: 80,
+  printWidth: 100,
   useTabs: false,
   tailwindConfig: './packages/configs/tailwind.config.js',
   plugins: [require('prettier-plugin-tailwindcss')],

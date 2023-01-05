@@ -18,7 +18,7 @@
   </button>
 </template>
 
-<style lang="postcss" scoped>
+<style scoped>
   button {
     @apply cursor-pointer rounded border-0 py-2 px-4 font-bold text-white outline-0;
 

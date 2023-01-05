@@ -17,7 +17,7 @@ module.exports = {
     'prettier',
   ],
   overrides: [],
-  plugins: ['vue', '@typescript-eslint', 'prettier'],
+  plugins: ['html', 'vue', '@typescript-eslint', 'prettier'],
   rules: {
     'vue/multi-word-component-names': 'off',
     '@typescript-eslint/no-var-requires': 'off',
