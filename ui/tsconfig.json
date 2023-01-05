@@ -1,7 +1,7 @@
 {
   "extends": "@lyrebird/tsconfigs/tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
       "@lyrebird/ui/*": ["src/*"]
     }
