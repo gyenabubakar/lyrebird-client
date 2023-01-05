@@ -1,7 +1,7 @@
 {
   "name": "@lyrebird/app",
   "version": "0.0.0",
-  "private": false,
+  "private": true,
   "scripts": {
     "dev": "nuxt dev -p 7000",
     "build": "nuxt build",
@@ -20,5 +20,10 @@
     "postcss": "^8.4.19",
     "postcss-import": "^15.0.0",
     "tailwindcss": "^3.2.4"
+  },
+  "engines": {
+    "node": "18.x",
+    "npm": ">=8.x",
+    "yarn": "please-use-npm"
   }
 }
