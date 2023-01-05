@@ -9,15 +9,7 @@ export default {
     style: {
       control: {
         type: 'select',
-        options: [
-          'default',
-          'primary',
-          'secondary',
-          'text',
-          'success',
-          'danger',
-          'warning',
-        ],
+        options: ['default', 'primary', 'secondary', 'text', 'success', 'danger', 'warning'],
       },
     },
     type: {
