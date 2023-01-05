@@ -10,4 +10,4 @@ if [ "$BRANCH" = "main" ] || [ "$BRANCH" = "staging" ]; then
 fi
 
 # run code quality checks
-npm run code-quality:all
+npm run code-quality:all && git add .

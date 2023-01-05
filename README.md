@@ -1,26 +1,22 @@
-# Turborepo starter
+<div style="text-align: center;">
+    <img src="./app/public/lyrebird-logo.svg" width="100" alt="Lyrebird logo" />
+</div>
 
-This is an official Yarn v1 starter turborepo.
+# Lyrebird Client
 
-## What's inside?
+Lyrebird is simply a content creation and management application for social media platforms and is currently focused on
+Twitter only. In short, Lyrebird is just another alternative to [Hypefury](https://hypefury.com) or
+[Hootsuite](https://hootsuite.com) but without support for the other social networks. That will come later.
 
-This turborepo includes the following packages/apps:
+Here's a Notion document that explains the project in more detail to the UI designer who worked on
+this: [Lyrebird Notion Document](https://www.notion.so/gyen/Lyrebird-A-Twitter-Content-Management-Software-6808d851058745099b444e52e6aa1471).
 
-### Apps and Packages
+## Setup
 
-- `docs`: a [Next.js](https://nextjs.org) app
-- `web`: another [Next.js](https://nextjs.org) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
-- `config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
+To setup the project, you need to have [Node.js](https://nodejs.org/en/) installed on your machine, **at least v16.x**
+and it's recommended to use NPM (**>= v8.x**) as your package manager; this is to ensure consistency across the project
+and to prevent any issues with using different package managers.
 
-Each package/app is 100% [Typescript](https://www.typescriptlang.org/).
+### Install dependencies
 
-### Utilities
-
-This turborepo has some additional tools already setup for you:
-
-- [Typescript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Jest](https://jestjs.io) test runner for all things JavaScript
-- [Prettier](https://prettier.io) for code formatting
+Running `npm install` will install dependencies and also run the `prepare` script which will enable hooks with Husky.
