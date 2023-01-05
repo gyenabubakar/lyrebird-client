@@ -13,10 +13,41 @@ this: [Lyrebird Notion Document](https://www.notion.so/gyen/Lyrebird-A-Twitter-C
 
 ## Setup
 
-To setup the project, you need to have [Node.js](https://nodejs.org/en/) installed on your machine, **at least v16.x**
-and it's recommended to use NPM (**>= v8.x**) as your package manager; this is to ensure consistency across the project
+To set up the project, you need to have [Node.js](https://nodejs.org/en/) (**at least v16.x**) installed on your
+machine,
+and it's recommended to use NPM (**at least v8.x**) as your package manager; this is to ensure consistency across the
+project
 and to prevent any issues with using different package managers.
 
 ### Install dependencies
 
 Running `npm install` will install dependencies and also run the `prepare` script which will enable hooks with Husky.
+
+### Run the project
+
+- `npm run dev` will run the `dev` script in all packages that have it, in parallel.
+- `npm run dev:app` will run the `dev` script in the `app` package.
+- `npm run dev:ui` will run the `dev` script in the `ui` package. This will open the Storybook UI in your browser.
+
+Same concept applies to the `build` script.
+
+## Code Style
+
+This project uses [Prettier](https://prettier.io/) for code formatting and [ESLint](https://eslint.org/) for linting.
+Use these commands to format and lint the code:
+
+- `npm run code-quality:format` will format the codebase using Prettier.
+- `npm run code-quality:lint` will lint the codebase using ESLint.
+- `npm run code-quality:all` will run both the above commands, in that order.
+
+## Contributing
+
+1. Ensure that all your branches are named in the pattern `<github-username>/<issue-title>`.
+
+2. Never commit directly to the `main` and `staging` branches. Always create a PR and get it reviewed before merging. We
+   have a Husky hook that will prevent you from committing directly to these branches.
+
+3. Always create a new branch from `staging` and name it `<github-username>/<issue-title>`. This is to ensure that
+   the `main` branch is always stable and ready for production.
+
+4. Always create a PR from your branch to `staging` and get it reviewed before merging.
