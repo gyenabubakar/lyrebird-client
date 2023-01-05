@@ -40,6 +40,8 @@ Use these commands to format and lint the code:
 - `npm run code-quality:lint` will lint the codebase using ESLint.
 - `npm run code-quality:all` will run both the above commands, in that order.
 
+When you commit code, Husky will run the `code-quality:all` script to ensure that the code is formatted and linted.
+
 ## Contributing
 
 1. Ensure that all your branches are named in the pattern `<github-username>/<issue-title>`.
