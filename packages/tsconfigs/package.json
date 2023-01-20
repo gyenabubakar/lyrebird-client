@@ -1,7 +1,7 @@
 {
   "name": "@lyrebird/tsconfigs",
   "version": "0.0.0",
-  "private": false,
+  "private": true,
   "files": [
     "tsconfig.base.json",
     "tsconfig.node.json"
