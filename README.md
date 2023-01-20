@@ -39,8 +39,8 @@ This project is a monorepo set up with [TurboRepo](https://turbo.build/repo). Th
 
 Currently there are 4 workspaces:
 
-- `@lyrebird/app` - The main application, built with Vue3 and Nuxt3.
-- `@lyrebird/ui` - The UI library, documented with Storybook.
+- `@lyrebird/app` - The main application, built with Vue3 and Nuxt3. Found in `app/`
+- `@lyrebird/ui` - The UI library, documented with Storybook. Found in `ui/`.
 - `@lyrebird/configs` - Contains shared configuration files for Tailwind, PostCSS, etc. Found in `packages/configs`.
 - `@lyrebird/tsconfigs` - Contains shared TypeScript configuration files. Found in `packages/tsconfigs`.
 
