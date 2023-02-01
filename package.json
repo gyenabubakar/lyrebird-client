@@ -4,8 +4,7 @@
   "private": true,
   "workspaces": [
     "app",
-    "ui",
-    "packages/*"
+    "ui"
   ],
   "scripts": {
     "prepare": "is-ci || husky install",

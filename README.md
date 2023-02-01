@@ -37,12 +37,10 @@ This project is a monorepo set up with [TurboRepo](https://turbo.build/repo). Th
 
 > Learn more about monorepos [here](https://turbo.build/repo/docs/handbook/what-is-a-monorepo).
 
-Currently there are 4 workspaces:
+Currently there are 2 workspaces:
 
 - `@lyrebird/app` - The main application, built with Vue3 and Nuxt3. Found in `app/`
 - `@lyrebird/ui` - The UI library, documented with Storybook. Found in `ui/`.
-- `@lyrebird/configs` - Contains shared configuration files for Tailwind, PostCSS, etc. Found in `packages/configs`.
-- `@lyrebird/tsconfigs` - Contains shared TypeScript configuration files. Found in `packages/tsconfigs`.
 
 To install a new dependency, run `npm install <npm-dependency-name>` **in the root** of the project. This will install the package in all workspaces and update the `package-lock.json` file. If you want to install a dependency in a specific workspace only, run `npm install <npm-dependency-name> --workspace=<workspace-name>` **in the root** of the project, like:
 

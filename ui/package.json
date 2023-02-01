@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "module": "./src/index.ts",
   "scripts": {
     "dev": "start-storybook -p 7001",
     "build": "build-storybook -o ./dist",
@@ -10,12 +11,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "phosphor-vue": "^1.4.2",
     "vue": "^3.2.41"
   },
   "devDependencies": {
     "@babel/core": "^7.20.2",
-    "@lyrebird/configs": "*",
-    "@lyrebird/tsconfigs": "*",
     "@storybook/addon-actions": "^6.5.15",
     "@storybook/addon-essentials": "^6.5.15",
     "@storybook/addon-interactions": "^6.5.15",
@@ -40,5 +40,9 @@
     "node": "16.x",
     "npm": ">=8.x",
     "yarn": "please-use-npm"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./button": "./src/button/index.ts"
   }
 }

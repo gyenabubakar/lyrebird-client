@@ -1,49 +1,49 @@
 <script lang="ts" setup>
-  import { ButtonStyle, ButtonType } from './types';
+  import { ButtonColour, ButtonType } from './types';
 
-  interface Props {
-    style: ButtonStyle;
-    type: ButtonType;
+  interface ButtonProps {
+    colour?: ButtonColour;
+    type?: ButtonType;
   }
 
-  const props = withDefaults(defineProps<Props>(), {
-    style: 'default',
+  defineEmits(['click', 'mouseenter', 'mouseleave']);
+
+  const props = withDefaults(defineProps<ButtonProps>(), {
+    colour: 'default',
     type: 'button',
   });
 </script>
 
 <template>
-  <button :class="`${props.style}`" :type="props.type">
+  <button
+    :class="props.colour"
+    :type="props.type"
+    @click="$emit('click', $event)"
+    @mouseenter="$emit('mouseenter', $event)"
+    @mouseleave="$emit('mouseleave', $event)"
+  >
     <slot />
   </button>
 </template>
 
 <style scoped>
   button {
-    @apply cursor-pointer rounded border-0 py-2 px-4 font-bold text-white outline-0;
+    @apply cursor-pointer rounded-lg border-0 py-2 px-4 text-sm font-semibold text-white outline-0;
 
     &.default {
-      @apply bg-gray-500 hover:bg-gray-600;
+      @apply bg-gray-200 text-gray-700 hover:bg-gray-300;
     }
 
     &.primary {
-      @apply bg-blue-500 hover:bg-blue-600;
+      @apply bg-primary-dark hover:bg-primary;
     }
 
     &.secondary {
-      @apply bg-teal-500 hover:bg-teal-600;
+      @apply bg-lbgreen hover:bg-teal-600;
     }
 
-    &.danger {
-      @apply bg-red-500 hover:bg-red-600;
-    }
-
-    &.success {
-      @apply bg-green-500 hover:bg-green-600;
-    }
-
-    &.warning {
-      @apply bg-yellow-500 hover:bg-yellow-600;
+    &.black {
+      @apply bg-black hover:bg-gray-900;
     }
 
     &.text {

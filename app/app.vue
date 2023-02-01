@@ -1,5 +1,7 @@
 <script lang="ts" setup>
   import { useHead } from '#imports';
+  import Button from '@lyrebird/ui/button';
+  import { LyrebirdApp } from '@lyrebird/ui';
 
   useHead({
     title: 'Lyrebird',
@@ -14,9 +16,22 @@
 </script>
 
 <template>
-  <div>
+  <LyrebirdApp>
+    <Button> Hello World </Button>
+    <p>Hello Nuxt</p>
+
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
-  </div>
+  </LyrebirdApp>
 </template>
+
+<style>
+  p {
+    @apply text-primary;
+
+    &:hover {
+      @apply text-primary-dark;
+    }
+  }
+</style>

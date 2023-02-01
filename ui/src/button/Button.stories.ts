@@ -1,29 +1,37 @@
 import { Meta } from '@storybook/vue3';
+import { LyrebirdApp } from '@lyrebird/ui';
 import Button from './Button.vue';
-import { ButtonStyle, ButtonType } from './types';
+import { ButtonProps } from './types';
 
 export default {
   title: 'Elements/Button',
   component: Button,
   argTypes: {
-    style: {
-      control: {
-        type: 'select',
-        options: ['default', 'primary', 'secondary', 'text', 'success', 'danger', 'warning'],
-      },
+    colour: {
+      options: ['default', 'primary', 'secondary', 'black', 'text'],
     },
-    type: {
-      control: { type: 'select', options: ['button', 'submit', 'reset'] },
-    },
+    type: { options: ['button', 'submit', 'reset'] },
+    onClick: { action: 'on:click' },
+    onMouseenter: { action: 'on:mouseenter' },
+    onMouseleave: { action: 'on:mouseleave' },
   },
-} as Meta;
+} as Meta<typeof Button>;
 
-export const Default = (args: { style: ButtonStyle; type: ButtonType }) => ({
-  components: { Button },
-  template: `
-    <Button v-bind="args">Hello</Button>
-  `,
+export const Default = (args: ButtonProps) => ({
+  components: { Button, LyrebirdApp },
   setup() {
     return { args };
   },
+  template: `
+    <LyrebirdApp>
+      <Button v-bind="args">
+        Hello
+      </Button>
+    </LyrebirdApp>
+  `,
 });
+
+Default.args = {
+  colour: 'default',
+  type: 'button',
+};
