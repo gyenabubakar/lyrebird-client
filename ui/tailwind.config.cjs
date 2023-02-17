@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         primary: '#BE6AFF',
         'primary-dark': '#8F20E4',
-        lbgreen: '#16A34A',
+        lbgreen: '#16A34A', // lb stands for Lyrebird
       },
     },
   },

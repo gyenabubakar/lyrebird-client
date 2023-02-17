@@ -2,8 +2,12 @@
   import { ButtonColour, ButtonType } from './types';
 
   interface ButtonProps {
-    colour?: ButtonColour;
     type?: ButtonType;
+
+    colour?: ButtonColour;
+    fluid?: boolean;
+    compact?: boolean;
+    size?: 'extra-small' | 'small' | 'medium' | 'large' | 'extra-large';
   }
 
   defineEmits(['click', 'mouseenter', 'mouseleave']);
@@ -11,12 +15,20 @@
   const props = withDefaults(defineProps<ButtonProps>(), {
     colour: 'default',
     type: 'button',
+    size: 'medium',
+    fluid: false,
+    compact: false,
   });
 </script>
 
 <template>
   <button
-    :class="props.colour"
+    :class="{
+      [props.colour]: true,
+      [props.size]: true,
+      fluid: props.fluid,
+      compact: props.compact,
+    }"
     :type="props.type"
     @click="$emit('click', $event)"
     @mouseenter="$emit('mouseenter', $event)"
@@ -28,7 +40,47 @@
 
 <style scoped>
   button {
-    @apply cursor-pointer rounded-lg border-0 py-2 px-4 text-sm font-semibold text-white outline-0;
+    --size: 2rem;
+    --size-multiplier: 1;
+    --compact-size-multiplier: 1;
+    --evaluated-size: calc(var(--size) * var(--size-multiplier) * var(--compact-size-multiplier));
+
+    height: var(--evaluated-size);
+    min-height: var(--evaluated-size);
+    max-height: var(--evaluated-size);
+    font-size: calc(0.875rem * var(--size-multiplier));
+    line-height: calc(1.25rem * var(--size-multiplier));
+    padding: 0 var(--evaluated-size);
+
+    @apply cursor-pointer rounded-lg border-0 font-semibold text-white outline-0;
+
+    &.fluid {
+      @apply w-full;
+    }
+
+    &.compact {
+      --compact-size-multiplier: 0.9;
+    }
+
+    &.extra-small {
+      --size-multiplier: 0.75;
+    }
+
+    &.small {
+      --size-multiplier: 0.875;
+    }
+
+    &.medium {
+      --size-multiplier: 1;
+    }
+
+    &.large {
+      --size-multiplier: 1.25;
+    }
+
+    &.extra-large {
+      --size-multiplier: 1.5;
+    }
 
     &.default {
       @apply bg-gray-200 text-gray-700 hover:bg-gray-300;

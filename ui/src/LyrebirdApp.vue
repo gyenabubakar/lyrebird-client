@@ -7,3 +7,15 @@
     <slot />
   </div>
 </template>
+
+<style>
+  #lyrebird-app-container {
+    --transition-duration: 0.15s;
+    --transition-timing-function: ease-in;
+  }
+
+  #lyrebird-app-container,
+  #lyrebird-app-container * {
+    transition: all var(--transition-duration) var(--transition-timing-function);
+  }
+</style>
