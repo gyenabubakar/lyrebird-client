@@ -14,8 +14,8 @@
     "build": "turbo run build",
     "build:ui": "turbo run build --filter=@lyrebird/ui",
     "build:app": "turbo run build --filter=@lyrebird/app",
-    "code-quality:format": "prettier --write '**/*.{js,jsx,ts,tsx,md,json,vue,html,css}'",
-    "code-quality:lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue,.html .",
+    "code-quality:format": "prettier --write '**/*.{js,ts,md,mdx,json,vue,html,css}'",
+    "code-quality:lint": "eslint --ext .js,.ts,.vue, .",
     "code-quality:all": "npm run code-quality:format -- --loglevel silent && npm run code-quality:lint -- --fix"
   },
   "devDependencies": {
@@ -30,7 +30,7 @@
     "is-ci": "^3.0.1",
     "prettier": "2.8.0",
     "prettier-plugin-tailwindcss": "^0.1.13",
-    "turbo": "*",
+    "turbo": "^1.7.4",
     "typescript": "^4.9.3"
   },
   "engines": {
