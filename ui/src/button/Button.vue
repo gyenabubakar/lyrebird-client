@@ -56,7 +56,7 @@
     @apply cursor-pointer rounded-lg border-0 font-medium text-white outline-0;
 
     &.fluid {
-      @apply w-full;
+      @apply flex w-full items-center justify-center px-[unset];
     }
 
     &.compact {
