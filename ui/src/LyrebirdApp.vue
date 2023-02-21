@@ -12,6 +12,8 @@
   #lyrebird-app-container {
     --transition-duration: 0.15s;
     --transition-timing-function: ease-in;
+
+    @apply h-full w-full;
   }
 
   #lyrebird-app-container,

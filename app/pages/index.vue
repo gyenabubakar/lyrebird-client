@@ -1,7 +1,11 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+  import Sidebar from '@lyrebird/ui/sidebar';
+</script>
 
 <template>
   <div>
+    <Sidebar active-item="Dashboard" />
+
     Page: foo
 
     <p>

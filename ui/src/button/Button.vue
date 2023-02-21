@@ -10,7 +10,7 @@
     size?: 'extra-small' | 'small' | 'medium' | 'large' | 'extra-large';
   }
 
-  defineEmits(['click', 'mouseenter', 'mouseleave']);
+  const emit = defineEmits(['click', 'mouseenter', 'mouseleave']);
 
   const props = withDefaults(defineProps<ButtonProps>(), {
     colour: 'default',
@@ -23,6 +23,7 @@
 
 <template>
   <button
+    class="lb-button"
     :class="{
       [props.colour]: true,
       [props.size]: true,
@@ -30,9 +31,9 @@
       compact: props.compact,
     }"
     :type="props.type"
-    @click="$emit('click', $event)"
-    @mouseenter="$emit('mouseenter', $event)"
-    @mouseleave="$emit('mouseleave', $event)"
+    @click="emit('click', $event)"
+    @mouseenter="emit('mouseenter', $event)"
+    @mouseleave="emit('mouseleave', $event)"
   >
     <slot />
   </button>
@@ -48,11 +49,11 @@
     height: var(--evaluated-size);
     min-height: var(--evaluated-size);
     max-height: var(--evaluated-size);
-    font-size: calc(0.875rem * var(--size-multiplier));
+    font-size: calc(10pt * var(--size-multiplier));
     line-height: calc(1.25rem * var(--size-multiplier));
     padding: 0 var(--evaluated-size);
 
-    @apply cursor-pointer rounded-lg border-0 font-semibold text-white outline-0;
+    @apply cursor-pointer rounded-lg border-0 font-medium text-white outline-0;
 
     &.fluid {
       @apply w-full;
@@ -87,7 +88,7 @@
     }
 
     &.primary {
-      @apply bg-primary-dark hover:bg-primary;
+      @apply bg-primary-dark hover:bg-primary-dark/90;
     }
 
     &.secondary {
