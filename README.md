@@ -1,8 +1,10 @@
-<div style="text-align: center;">
-    <img src="./app/public/lyrebird-logo.svg" width="100" alt="Lyrebird logo" style="margin: 0 auto;" />
-</div>
+<p align="center">
+   <a href="https://lyre-bird.app">
+      <img src="./app/public/lyrebird-logo.svg" width="100" alt="Lyrebird logo" style="margin: 0 auto;" />
+   </a>
+</p>
 
-# Lyrebird Client
+<h1 align="center">Lyrebird Client</h1>
 
 Lyrebird is simply a content creation and management application for social media platforms and is currently focused on
 Twitter only. In short, Lyrebird is just another alternative to [Hypefury](https://hypefury.com) or
