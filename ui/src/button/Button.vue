@@ -1,49 +1,102 @@
 <script lang="ts" setup>
-  import { ButtonStyle, ButtonType } from './types';
+  import { ButtonColour, ButtonType } from './types';
 
-  interface Props {
-    style: ButtonStyle;
-    type: ButtonType;
+  interface ButtonProps {
+    type?: ButtonType;
+
+    colour?: ButtonColour;
+    fluid?: boolean;
+    compact?: boolean;
+    size?: 'extra-small' | 'small' | 'medium' | 'large' | 'extra-large';
   }
 
-  const props = withDefaults(defineProps<Props>(), {
-    style: 'default',
+  const emit = defineEmits(['click', 'mouseenter', 'mouseleave']);
+
+  const props = withDefaults(defineProps<ButtonProps>(), {
+    colour: 'default',
     type: 'button',
+    size: 'medium',
+    fluid: false,
+    compact: false,
   });
 </script>
 
 <template>
-  <button :class="`${props.style}`" :type="props.type">
+  <button
+    class="lb-button"
+    :class="{
+      [props.colour]: true,
+      [props.size]: true,
+      fluid: props.fluid,
+      compact: props.compact,
+    }"
+    :type="props.type"
+    @click="emit('click', $event)"
+    @mouseenter="emit('mouseenter', $event)"
+    @mouseleave="emit('mouseleave', $event)"
+  >
     <slot />
   </button>
 </template>
 
 <style scoped>
   button {
-    @apply cursor-pointer rounded border-0 py-2 px-4 font-bold text-white outline-0;
+    --size: 2rem;
+    --size-multiplier: 1;
+    --compact-size-multiplier: 1;
+    --evaluated-size: calc(var(--size) * var(--size-multiplier) * var(--compact-size-multiplier));
+
+    height: var(--evaluated-size);
+    min-height: var(--evaluated-size);
+    max-height: var(--evaluated-size);
+    font-size: calc(10pt * var(--size-multiplier));
+    line-height: calc(1.25rem * var(--size-multiplier));
+    padding: 0 var(--evaluated-size);
+
+    @apply cursor-pointer rounded-lg border-0 font-medium text-white outline-0;
+
+    &.fluid {
+      @apply flex w-full items-center justify-center px-[unset];
+    }
+
+    &.compact {
+      --compact-size-multiplier: 0.9;
+    }
+
+    &.extra-small {
+      --size-multiplier: 0.75;
+    }
+
+    &.small {
+      --size-multiplier: 0.875;
+    }
+
+    &.medium {
+      --size-multiplier: 1;
+    }
+
+    &.large {
+      --size-multiplier: 1.25;
+    }
+
+    &.extra-large {
+      --size-multiplier: 1.5;
+    }
 
     &.default {
-      @apply bg-gray-500 hover:bg-gray-600;
+      @apply bg-gray-200 text-gray-700 hover:bg-gray-300;
     }
 
     &.primary {
-      @apply bg-blue-500 hover:bg-blue-600;
+      @apply bg-primary-dark hover:bg-primary-dark/90;
     }
 
     &.secondary {
-      @apply bg-teal-500 hover:bg-teal-600;
+      @apply bg-lbgreen hover:bg-teal-600;
     }
 
-    &.danger {
-      @apply bg-red-500 hover:bg-red-600;
-    }
-
-    &.success {
-      @apply bg-green-500 hover:bg-green-600;
-    }
-
-    &.warning {
-      @apply bg-yellow-500 hover:bg-yellow-600;
+    &.black {
+      @apply bg-black hover:bg-gray-900;
     }
 
     &.text {

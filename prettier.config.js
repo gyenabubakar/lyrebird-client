@@ -5,7 +5,7 @@ module.exports = {
   trailingComma: 'all',
   printWidth: 100,
   useTabs: false,
-  tailwindConfig: './packages/configs/tailwind.config.js',
+  tailwindConfig: './ui/tailwind.config.cjs',
   plugins: [require('prettier-plugin-tailwindcss')],
   vueIndentScriptAndStyle: true,
   bracketSpacing: true,
