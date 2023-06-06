@@ -1,14 +1,7 @@
 export type ButtonType = 'button' | 'submit' | 'reset';
-export type ButtonStyle =
-  | 'default'
-  | 'primary'
-  | 'secondary'
-  | 'success'
-  | 'danger'
-  | 'warning'
-  | 'text';
+export type ButtonColour = 'default' | 'primary' | 'secondary' | 'black' | 'text';
 
 export interface ButtonProps {
-  style: ButtonStyle;
+  colour: ButtonColour;
   type: ButtonType;
 }
