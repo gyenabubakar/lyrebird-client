@@ -10,9 +10,6 @@ Lyrebird is simply a content creation and management application for social medi
 Twitter only. In short, Lyrebird is just another alternative to [Hypefury](https://hypefury.com) or
 [Hootsuite](https://hootsuite.com) but without support for the other social networks. That will come later.
 
-Here's a Notion document that explains the project in more detail to the UI designer who worked on
-this: [Lyrebird Notion Document](https://www.notion.so/gyen/Lyrebird-A-Twitter-Content-Management-Software-6808d851058745099b444e52e6aa1471).
-
 ## Setup
 
 To set up the project, you need to have [Node.js](https://nodejs.org/en/) (**at least v16.x**) installed on your
