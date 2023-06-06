@@ -1,8 +1,10 @@
-<div style="text-align: center;">
-    <img src="./app/public/lyrebird-logo.svg" width="100" alt="Lyrebird logo" />
-</div>
+<p align="center">
+   <a href="https://lyre-bird.app">
+      <img src="./app/public/lyrebird-logo.svg" width="100" alt="Lyrebird logo" style="margin: 0 auto;" />
+   </a>
+</p>
 
-# Lyrebird Client
+<h1 align="center">Lyrebird Client</h1>
 
 Lyrebird is simply a content creation and management application for social media platforms and is currently focused on
 Twitter only. In short, Lyrebird is just another alternative to [Hypefury](https://hypefury.com) or
@@ -13,11 +15,9 @@ this: [Lyrebird Notion Document](https://www.notion.so/gyen/Lyrebird-A-Twitter-C
 
 ## Setup
 
-To set up the project, you need to have [Node.js](https://nodejs.org/en/) (**at least v18.x**) installed on your
-machine,
-and it's recommended to use NPM (**at least v8.x**) as your package manager; this is to ensure consistency across the
-project
-and to prevent any issues with using different package managers.
+To set up the project, you need to have [Node.js](https://nodejs.org/en/) (**at least v16.x**) installed on your
+machine, and it's recommended to use NPM (**at least v8.x**) as your package manager; this is to ensure consistency
+across the project and to prevent any issues with using different package managers.
 
 ### Install dependencies
 
@@ -33,18 +33,20 @@ Same applies to the `build` script.
 
 ### Installing new dependencies
 
-This project is a monorepo set up with [TurboRepo](https://turbo.build/repo). This means that all workspaces are managed by a single `package-lock.json` file at the root of the project.
+This project is a monorepo set up with [TurboRepo](https://turbo.build/repo). This means that all workspaces are managed
+by a single `package-lock.json` file at the root of the project.
 
 > Learn more about monorepos [here](https://turbo.build/repo/docs/handbook/what-is-a-monorepo).
 
-Currently there are 4 workspaces:
+Currently, there are 2 workspaces:
 
 - `@lyrebird/app` - The main application, built with Vue3 and Nuxt3. Found in `app/`
 - `@lyrebird/ui` - The UI library, documented with Storybook. Found in `ui/`.
-- `@lyrebird/configs` - Contains shared configuration files for Tailwind, PostCSS, etc. Found in `packages/configs`.
-- `@lyrebird/tsconfigs` - Contains shared TypeScript configuration files. Found in `packages/tsconfigs`.
 
-To install a new dependency, run `npm install <npm-dependency-name>` **in the root** of the project. This will install the package in all workspaces and update the `package-lock.json` file. If you want to install a dependency in a specific workspace only, run `npm install <npm-dependency-name> --workspace=<workspace-name>` **in the root** of the project, like:
+To install a new dependency, run `npm install <npm-dependency-name>` **in the root** of the project. This will install
+the package in all workspaces and update the `package-lock.json` file. If you want to install a dependency in a specific
+workspace only, run `npm install <npm-dependency-name> --workspace=<workspace-name>` **in the root** of the project,
+like:
 
 ```bash
 npm install lodash --workspace=@lyrebird/app
@@ -61,7 +63,9 @@ Use these commands to format and lint the code:
 - `npm run code-quality:lint` will lint the codebase using ESLint.
 - `npm run code-quality:all` will run both the above commands, in that order.
 
-When you commit code, Husky will run the `code-quality:all` script to ensure that the code is well-formatted and has no linting errors. Husky might allow commits when it encounters warnings so you can ignore them, but it's better to resolve them. We should keep the project as clean as possible.
+When you commit code, Husky will run the `code-quality:all` script to ensure that the code is well-formatted and has no
+linting errors. Husky might allow commits when it encounters warnings, so you can ignore them, but it's better to resolve
+them. We should keep the project as clean as possible.
 
 ## Contributing
 
@@ -71,6 +75,7 @@ When you commit code, Husky will run the `code-quality:all` script to ensure tha
    have a Husky hook that will prevent you from committing directly to these branches.
 
 3. Always create a new branch from `staging` and name it `<github-username>/<issue-title>`. This is to ensure that
-   the `main` branch is always stable, free of beta changes and ready for production. The `main` branch will only receive changes from the `staging` branch when the `staging` branch is stable enough.
+   the `main` branch is always stable, free of beta changes and ready for production. The `main` branch will only
+   receive changes from the `staging` branch when the `staging` branch is stable enough.
 
 4. Always create a PR from your feature branch to `staging` and get it reviewed before merging.

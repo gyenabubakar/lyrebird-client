@@ -1,5 +1,8 @@
-const { postcss } = require('@lyrebird/configs');
-
 module.exports = {
-  ...postcss,
+  plugins: {
+    'postcss-import': {},
+    'tailwindcss/nesting': {},
+    tailwindcss: {},
+    autoprefixer: {},
+  },
 };
